@@ -1,0 +1,118 @@
+/* === style.css — минималистичный адаптивный стиль для сайта по философии === */
+:root{
+  --bg: #f6f5f3;
+  --card: #fffdfa;
+  --text: #222;
+  --muted: #636363;
+  --accent: #8a7c60;
+  --dark: #242424;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* header */
+header{
+  background: linear-gradient(135deg, #2b2b2b, #444);
+  color:#f6f5f3;
+  text-align:center;
+  padding:50px 18px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.16);
+}
+header h1{margin:0;font-size:2.4rem;letter-spacing:0.6px}
+header p{margin:8px 0 0;color:#dcd8d4;font-style:italic}
+
+/* nav */
+nav{
+  background:var(--card);
+  display:flex;
+  justify-content:center;
+  gap:6px;
+  flex-wrap:wrap;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+}
+nav a{
+  display:block;
+  padding:12px 18px;
+  color:var(--dark);
+  text-decoration:none;
+  font-weight:600;
+  transition:color .25s, transform .15s;
+  position:relative;
+}
+nav a:hover{color:var(--accent); transform:translateY(-2px)}
+nav a.active{color:var(--accent)}
+
+/* main card */
+main{
+  max-width:1060px;
+  margin:36px auto;
+  padding:28px;
+  background:var(--card);
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(20,20,20,0.06);
+}
+
+/* headings & text */
+h2{
+  margin:0 0 12px 0;
+  font-size:1.4rem;
+  border-left:4px solid var(--accent);
+  padding-left:12px;
+}
+p{margin:0 0 16px 0;color:var(--muted);font-size:1rem;text-align:justify}
+
+/* figure */
+figure{margin:18px 0;text-align:center}
+figure img{width:100%;max-width:900px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.12);display:block}
+figcaption{margin-top:8px;color:#6b6660;font-size:0.95rem;font-style:italic}
+
+/* lists */
+ul{padding:14px;background:#fbfaf8;border-radius:8px;list-style:disc;margin:12px 0 20px 20px}
+li{margin:8px 0;color:var(--muted)}
+
+/* footer */
+footer{
+  background: linear-gradient(180deg, #2b2b2b, #1e1e1e);
+  color:#dcd9d6;
+  text-align:center;
+  padding:20px;
+  margin-top:30px;
+  font-size:0.95rem;
+}
+
+/* buttons */
+.button{
+  display:inline-block;
+  background:var(--accent);
+  color:white;
+  padding:10px 16px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  transition:background .2s, transform .12s;
+}
+.button:hover{background:#6f5f45; transform:translateY(-2px)}
+
+/* responsive */
+@media (max-width:900px){
+  header{padding:40px 14px}
+  header h1{font-size:2rem}
+  main{margin:24px; padding:20px}
+}
+@media (max-width:600px){
+  nav{flex-direction:column; gap:0}
+  nav a{width:100%; text-align:center; border-bottom:1px solid rgba(0,0,0,0.04)}
+  header{padding:34px 12px}
+  header h1{font-size:1.6rem}
+  main{padding:16px; border-radius:12px}
+  figure img{border-radius:10px}
+}
